@@ -8,68 +8,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script_v2.js"></script>
-    <div>
-        <div class="section" id="section_date">
-            Wybierz datę: 
-            <input type="date" onchange="SelectDate()" id="selected_date">
-        </div>
-        <div class="section" id="section_events">
-            <table id="timetable">
-                <thead>
-                    <tr>
-                        <td>
-                            Terminarz
-                        </td>
-                    </tr>
-                </thead>
-                <tbody id="events">
-                    
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>
-                            Szczegóły
-                        </td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div class="section" id="section_edit">
-            <table>
-                <thead>
-                    Dodawanie/Edycja
-                </thead>
-                <tr>
-                    <td>
-                        <span>Wybrane zdarzenie: <span id="selected_event"></span></span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <span>Tytuł:</span>
-                            <input type="text" id="title">
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <span>Opis:</span><br>
-                            <textarea id="desc" cols="30" rows="10"></textarea>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button onclick="AddEvent()">Dodaj/Edytuj</button>
-                        <button onclick="SelectEvent('new')">Nowy</button>
-                        <button onclick="DeleteEvent()" id="delete_button" disabled>Usuń</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        class Calendar extends React.Component
+        {
+            render(){
+                return(
+                    <div>
+                        <input type="date"/>
+                    </div>
+                )
+            }
+        }
+
+        class App extends React.Component
+        {
+            render(){
+                return(
+                    <Calendar/>
+                )
+            }
+        }
+
+        
+
+        const root = ReactDOM.createRoot(document.getElementById('app'));
+        root.render(<App/>);
+    </script>
+    <div id="app">
+
     </div>
     
     
